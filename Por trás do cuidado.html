@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Por trás do cuidado</title>
+<style>
+:root{--bg:#FBF6EE;--card:#fff;--ink:#2A1F2D;--mut:#6B5E6E;--pl:#4A1D5C;--pl2:#F1E7F5;--co:#E8735F;--te:#1F6F78;--ye:#E9B949;--ln:#E7DDD0;--ok:#E3F1EF;--no:#FBE9E4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C1420;--card:#2A1F2F;--ink:#F4ECF4;--mut:#B8A9BB;--pl:#D9B4EA;--pl2:#3A2845;--ln:#43344A;--ok:#17383A;--no:#432724;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--pl);line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:clamp(2.4rem,9vw,4.2rem)}h2{font-size:1.7rem}h3{font-size:1.15rem}
+main{max-width:900px;margin:0 auto;padding:20px 18px 60px;animation:in .4s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:22px;box-shadow:0 6px 24px rgba(74,29,92,.07);margin:14px 0}
+.btn{font:inherit;font-weight:600;border:2px solid var(--pl);background:var(--pl);color:#fff;padding:14px 24px;border-radius:999px;cursor:pointer;min-height:48px;margin:6px 8px 6px 0;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.s{background:transparent;color:var(--pl)}.btn:disabled{opacity:.4;cursor:not-allowed}
+@media(prefers-color-scheme:dark){.btn:not(.s){color:#1C1420}}
+.btn:focus-visible,.opt:focus-visible,.ch:focus-visible{outline:3px solid var(--ye);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.ch{text-align:left;cursor:pointer;border:2px solid var(--ln);background:var(--card);border-radius:22px;padding:16px;font:inherit;color:inherit;transition:.2s;position:relative}
+.ch.on{border-color:var(--pl);background:var(--pl2);box-shadow:0 8px 24px rgba(74,29,92,.18)}
+.ch .tick{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;border:2px solid var(--ln);display:grid;place-items:center;font-weight:700;color:#fff}
+.ch.on .tick{background:var(--te);border-color:var(--te)}
+.tag{display:inline-block;background:var(--pl2);color:var(--pl);border-radius:999px;padding:3px 12px;font-size:.85rem;font-weight:600}
+.bar{height:8px;background:var(--ln);border-radius:9px;overflow:hidden;margin:8px 0 16px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--co),var(--ye));transition:width .5s}
+.say{display:flex;gap:12px;margin:14px 0;align-items:flex-start}.say svg{flex:0 0 52px;width:52px}
+.say div{background:var(--pl2);border-radius:4px 18px 18px 18px;padding:10px 16px}.say b{display:block;font-size:.8rem;color:var(--pl);text-transform:uppercase;letter-spacing:.05em}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--card);border:2px solid var(--ln);border-radius:18px;padding:16px;margin:10px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--co)}.opt.on{border-color:var(--pl);background:var(--pl2)}
+.good{background:var(--ok);border-left:6px solid var(--te)}.warn{background:var(--no);border-left:6px solid var(--co)}
+.box{border-radius:14px;padding:12px 16px;margin:10px 0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.hero{display:flex;justify-content:center;align-items:flex-end;margin:20px 0}.hero svg{width:clamp(70px,19vw,120px);margin:0 -8px}.hero svg:nth-child(3){width:clamp(90px,25vw,150px);z-index:2}
+a{color:var(--te)}small,.mut{color:var(--mut)}details{margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--pl)}
+.sym{color:var(--co)}
+</style></head><body><main id="app"></main>
+<script>
+const P=[
+{id:0,n:"Alex",a:16,th:"Identidade, diversidade e acolhimento",bg:"#E8735F",sk:"#8D5A3B",hc:"#2A1A14",h:1,sh:"#4A1D5C",
+bio:"Alex toca violão na banda da escola, sonha em estudar produção musical e mora com a avó e o irmão mais velho. Procura a UBS com receio de ser julgado.",
+intro:"Alex tem 16 anos e usa o nome e o pronome “ele”. Entre ensaios e aulas, acha pouco espaço para falar de si. Vive com a avó e o irmão, e tem na professora de música uma pessoa de referência.",
+sc:[["Enfermeira","Oi, Alex! Que bom te ver. A conversa é sua e no seu ritmo."],["Alex","Eu não sei se posso falar de certas coisas aqui sem ninguém julgar."],["Enfermeira","Pode. Eu te explico como funciona o sigilo e você decide o que quer compartilhar."],["Alex","Tenho dormido mal. Rolaram uns comentários na escola e às vezes me sinto sozinho."]],
+q1:"Alex pediu para ser chamado pelo nome e pronome que usa e demonstra receio. Qual é a sua primeira conduta?",
+o1:[["Explicar o sigilo e seus limites, registrar o nome pelo qual prefere ser chamado e perguntar por onde ele quer começar.",1,"Acolhimento e escuta qualificada constroem vínculo, e o respeito à identidade é parte do cuidado. Explicar os limites do sigilo (situações de risco exigem avaliação e protocolos) dá transparência e confiança.","Alex relaxa os ombros e conta sobre o sono ruim e os comentários na escola."],
+["Chamar a avó para a sala para que a família saiba do que ele precisa.",0,"Expor informações pessoais sem a participação de Alex fere a privacidade e a autonomia. A família pode ser apoio, mas isso se avalia com o adolescente. Pode haver afastamento do serviço.","Alex responde por monossílabos e não volta a tocar no assunto."],
+["Aplicar logo o roteiro completo de risco (substâncias, sexualidade, violência) para não deixar nada escapar.",2,"Avaliar riscos é necessário, mas o momento e a forma importam. Perguntas em bloco sem vínculo lembram interrogatório e podem calar o adolescente.","Alex responde o essencial e o clima fica tenso. Você terá de reconstruir a confiança."]],
+q2:"Alex diz confiar na avó e na professora de música, mas teme que detalhes cheguem a todos em casa. Como avançar?",
+o2:[["Perguntar a quem ele confia, combinar com ele o que pode ser compartilhado e com quem, e oferecer retorno e o grupo de adolescentes da UBS.",1,"Identificar pessoas de confiança e pactuar o compartilhamento respeita a autonomia progressiva. Convidar para atividades coletivas amplia pertencimento.","Alex escolhe o que a avó pode saber e aceita voltar em duas semanas."],
+["Pedir à escola que vigie o comportamento dele sem avisá-lo.",0,"Monitorar sem transparência quebra a confiança e expõe o adolescente. A articulação com a escola deve ter seu conhecimento e consentimento.","Se Alex perceber, sentirá traição e pode evitar a UBS."],
+["Entregar um folheto e dizer que ele volte se precisar.",2,"Informar é bom, mas deixar toda a iniciativa com o adolescente ignora o receio de julgamento e a continuidade do cuidado.","Alex guarda o folheto, mas não retorna."]],
+net:[["Alex e as pessoas de confiança que ele indicar",1,"Ele é o centro da rede e define quem entra nela."],["Avó, com o consentimento e o combinado do que será compartilhado",1,"Pode ser vínculo protetor quando Alex concorda com os limites."],["Equipe da UBS (ACS, psicologia, agente de saúde) em cuidado compartilhado",1,"Garante continuidade sem multiplicar as exposições."],["Professora de música, via Saúde na Escola, com ciência de Alex",1,"A escola é espaço de convivência e pode ser apoio quando há consentimento."],["Coletivo cultural ou grupo juvenil acolhedor do território",1,"Amplia pertencimento e convivência sem julgamento."],["Contar à banda inteira sobre a conversa na UBS",0,"Compartilhar sem pedido de Alex é exposição desnecessária."],["Acionar o Conselho Tutelar imediatamente",0,"Só após avaliação de risco e segundo os protocolos. Não há indicação automática."]],
+sum:["Acolhimento e escuta antes de protocolos.","Respeito ao nome e pronome e à privacidade.","Explicar o sigilo e seus limites legais.","Construir a rede junto com o adolescente."],
+ri:["Privacidade e sigilo","Respeito à identidade","Participação","Proteção integral (ECA)"],
+rq:"Que sinais, no seu primeiro contato com um adolescente, mostram que ele se sente seguro para falar? E que práticas da sua futura equipe podem criar essa segurança?",rf:[1,2,4]},
+{id:1,n:"Lara",a:16,th:"Saúde sexual e reprodutiva",bg:"#1F6F78",sk:"#C98F68",hc:"#1E1410",h:2,sh:"#E9B949",
+bio:"Lara joga vôlei, quer ser fisioterapeuta e mora com a mãe e a tia. Tem dúvidas sobre IST, contracepção e autocuidado, e teme ser julgada ao perguntar.",
+intro:"Lara tem 16 anos, treina vôlei três vezes por semana e quer ser fisioterapeuta. Faz perguntas na internet, mas desconfia do que lê. Hoje decidiu perguntar a um profissional.",
+sc:[["Enfermeira","Oi, Lara! Fico feliz que tenha vindo. O que te trouxe aqui?"],["Lara","Tenho umas dúvidas sobre camisinha, pílula, essas coisas. Tenho vergonha de perguntar."],["Enfermeira","Perguntar é cuidar de si. Não há pergunta errada aqui."],["Lara","Tem coisa que li e não sei se é verdade. Medo de errar e me julgarem."]],
+q1:"Lara quer informações sobre prevenção de IST e métodos contraceptivos. Qual é a sua conduta?",
+o1:[["Perguntar o que ela já sabe, esclarecer mitos, explicar o preservativo (dupla proteção), os métodos disponíveis no SUS, a contracepção de emergência e os testes rápidos, em linguagem clara.",1,"Educação em saúde baseada em evidências parte do que a pessoa sabe e corrige mitos sem julgar. Apresentar opções respeita a autonomia e a escolha informada.","Lara tira dúvidas, sorri aliviada e pergunta como acessar os métodos."],
+["Dizer que ela é muito nova e deve esperar, e pedir que a mãe venha.",0,"Moralizar e condicionar a informação à presença dos responsáveis afasta o adolescente do serviço e não evita a exposição a riscos. Informação adequada protege.","Lara se retrai e volta a buscar respostas em fontes pouco confiáveis."],
+["Entregar material impresso e preservativos sem conversar.",2,"Os insumos são importantes, mas sem diálogo não se esclarecem mitos nem se avalia o contexto. Escuta e orientação dão sentido ao material.","Lara leva o folheto, mas as dúvidas principais continuam sem resposta."]],
+q2:"Lara quer começar um método contraceptivo e teme a reação da mãe. Como avançar?",
+o2:[["Apoiar sua autonomia progressiva, avaliar critérios clínicos, explorar quem de confiança poderia acompanhá-la (como a tia), reforçar o sigilo e seus limites e marcar retorno com testes rápidos e vacinação.",1,"Autonomia progressiva e cuidado clínico caminham juntos. O sigilo é o fio condutor, e a família pode participar quando Lara desejar e for seguro.","Lara decide contar à tia e combina o retorno para acompanhar o método."],
+["Condicionar o método à presença da mãe.",0,"Exigir a presença dos responsáveis cria barreira de acesso e pode adiar a proteção. A participação da família deve ser incentivada, não imposta.","Lara adia a decisão e permanece sem método."],
+["Prescrever na hora, sem avaliação clínica nem retorno.",2,"Garantir o acesso é importante, mas a escolha do método exige avaliação clínica e acompanhamento, com acolhimento para dúvidas e efeitos.","Lara inicia sem apoio, sente efeitos e abandona por medo."]],
+net:[["Lara e a pessoa de confiança que ela escolher (como a tia)",1,"Lara decide quem acompanha seu cuidado."],["Mãe, quando Lara quiser e for seguro",1,"A família pode ser apoio, mas a decisão de envolvê-la é construída com Lara."],["Equipe da UBS (consulta, testes rápidos, vacinas, retorno)",1,"Garante acesso contínuo aos serviços e métodos."],["Ações do Saúde na Escola e rodas de conversa sobre saúde sexual",1,"Educação em saúde coletiva e sem estigma, sem expor Lara."],["Grupo de adolescentes e equipe esportiva como espaço de informação",1,"Rede de pares com informação qualificada."],["Contar à turma do vôlei que Lara foi à UBS",0,"Quebra a privacidade sem necessidade."],["Avisar o treinador sobre o motivo da consulta",0,"Não há justificativa para compartilhar esses dados."]],
+sum:["Informação correta, sem moralização.","Autonomia progressiva e escolha informada.","Sigilo e acesso sem barreiras.","Continuidade: retorno, testes rápidos e vacinação."],
+ri:["Direitos sexuais e reprodutivos","Privacidade e sigilo","Acesso à saúde","Autonomia progressiva"],
+rq:"Que crenças pessoais suas podem interferir ao orientar sobre sexualidade, e como você pode evitá-las no atendimento?",rf:[1,2,5]},
+{id:2,n:"Caio",a:15,th:"Alimentação, condições de vida e território",bg:"#E9B949",sk:"#6B4331",hc:"#17100C",h:3,sh:"#1F6F78",
+bio:"Caio ama desenhar e andar de skate. Passa o dia na escola e em casa nem sempre há alimentos suficientes. Fica constrangido quando comentam sobre a sua alimentação.",
+intro:"Caio tem 15 anos, desenha quadrinhos e anda de skate na praça do bairro. Sai cedo, almoça na escola e muitas vezes volta a uma casa com poucos alimentos. Um colega fez uma piada, e desde então ele fala pouco do assunto.",
+sc:[["Enfermeira","Oi, Caio! Vi seus desenhos no caderno, são incríveis."],["Caio","Valeu. Você vai mandar eu comer melhor, né? Todo mundo fala."],["Enfermeira","Hoje quero te escutar. Como é o seu dia, da hora que acorda até dormir?"],["Caio","Corrida. Na escola eu como bem. Em casa depende, às vezes tem pouco."]],
+q1:"Caio fala da rotina e da falta de alimentos em casa. Qual é a sua conduta?",
+o1:[["Perguntar sobre a rotina e as refeições sem julgamento, reconhecer as condições concretas e reforçar o direito à alimentação adequada.",1,"Compreender as condições de vida evita culpar o adolescente. A alimentação adequada é um direito, e a conversa parte do contexto e não do corpo ou do peso.","Caio conta da casa, de quem cozinha e de como a escola ajuda."],
+["Orientar um cardápio com restrição de “besteiras” e pesá-lo.",0,"Foca no corpo e na restrição, ignora a causa (acesso aos alimentos) e pode estigmatizar e gerar relação ruim com a comida.","Caio se envergonha, perde a confiança e evita voltar."],
+["Pedir que a mãe o leve a um nutricionista.",2,"O encaminhamento pode ser útil, mas sem conhecer o contexto não resolve a causa e pode sobrecarregar a família.","A família não tem condições de ir e Caio fica sem apoio."]],
+q2:"Há sinais de insegurança alimentar na família. Como articular recursos?",
+o2:[["Com o consentimento de Caio e da família, articular escola (alimentação escolar e PSE), assistência social (CRAS, programas de transferência de renda) e iniciativas comunitárias como hortas e cozinhas solidárias.",1,"Insegurança alimentar é determinada socialmente. Intersetorialidade e participação da família ampliam o acesso sem expor ou culpar.","A família é acolhida no CRAS e Caio participa da horta da escola."],
+["Resolver sozinha com doações pessoais, fora dos fluxos.",0,"A intenção é boa, mas a ação não é sustentável nem garante direitos, e isola a enfermeira da rede.","A ajuda é pontual e logo se encerra, sem vínculos permanentes."],
+["Notificar de imediato o Conselho Tutelar por negligência.",2,"Insegurança alimentar por falta de acesso não é negligência por si só. O acionamento do Conselho Tutelar exige avaliação de risco e protocolos.","A família se sente acusada e se afasta da UBS."]],
+net:[["Caio e a família, que decidem o que querem compartilhar",1,"Participar das decisões fortalece o protagonismo."],["Escola: alimentação escolar e ações do PSE",1,"Pode reforçar o acesso às refeições sem estigma."],["Assistência social (CRAS), Cadastro Único e programas de renda",1,"Atuam nas causas sociais da insegurança alimentar."],["Equipe da UBS (ACS, NASF-AB, nutrição) e acompanhamento do crescimento",1,"Cuidado contínuo sem foco em peso ou dieta."],["Horta comunitária, cozinha solidária e grupo de skate/desenho",1,"Recursos do território que geram renda, alimento e convivência."],["Divulgar a situação na turma para mobilizar doações",0,"Expõe e constrange Caio."],["Orientar dieta de emagrecimento",0,"Sem indicação clínica, reforça estigma e ignora a realidade de acesso."]],
+sum:["Escutar sem julgar, partindo do contexto.","Alimentação adequada como direito.","Evitar dietas restritivas e foco no peso.","Articular escola, assistência social e comunidade."],
+ri:["Alimentação adequada","Proteção integral","Equidade","Participação"],
+rq:"Como você pode orientar sobre alimentação sem culpabilizar o adolescente ou a família?",rf:[1,2,3,4]},
+{id:3,n:"Maya",a:16,th:"Vínculos familiares e rede de apoio",bg:"#7A4A8C",sk:"#A9744F",hc:"#1B1017",h:4,sh:"#E8735F",
+bio:"Maya adora fotografia e grafite, mora com a mãe e o padrasto e passa fins de semana com o pai. Sente que não é ouvida em casa.",
+intro:"Maya tem 16 anos e fotografa a cidade pelo celular. Divide a semana entre a casa da mãe e a do pai. Em casa, sente que quando fala, “viram briga”. Hoje veio sozinha à UBS.",
+sc:[["Enfermeira","Oi, Maya! Pode se sentar. O que você gostaria de me contar?"],["Maya","Em casa ninguém me ouve. Qualquer conversa vira briga."],["Enfermeira","Isso parece pesado. Quer me contar um exemplo?"],["Maya","Queria participar das decisões da minha vida, mas me tratam como criança."]],
+q1:"Maya relata dificuldade de diálogo com os responsáveis. Qual é a sua conduta?",
+o1:[["Escutar a perspectiva dela, perguntar com quem consegue conversar e avaliar se há situação de risco ou segurança comprometida.",1,"A escuta qualificada reconhece o ponto de vista do adolescente, e a avaliação de segurança diferencia conflito comum de risco. A família não é presumida protetora nem prejudicial.","Maya fala da relação com o pai e com a tia, que a escutam mais."],
+["Ligar para a mãe e relatar o que Maya contou.",0,"Quebra a confiança e pode agravar o conflito. Compartilhar exige consentimento, salvo situações de risco e protocolos.","Maya se sente traída e deixa de procurar o serviço."],
+["Dar dicas de como se comunicar melhor com os responsáveis, sem aprofundar o contexto.",2,"Orientar a comunicação pode ajudar, mas colocar a responsabilidade só no adolescente desconsidera o contexto e a escuta.","Maya agradece, mas sai com a sensação de não ter sido compreendida."]],
+q2:"Maya aceita pensar em uma conversa com os responsáveis. Como seguir?",
+o2:[["Combinar com Maya o que quer dizer, propor uma conversa mediada se for seguro, ouvir também os responsáveis e identificar vínculos protetores na família e na comunidade.",1,"Fortalece a comunicação sem tomar partido, valoriza autonomia e participação e reconhece diferentes arranjos familiares.","A mãe e Maya combinam conversar e o pai se oferece para ajudar."],
+["Tomar partido dos responsáveis e orientar Maya a obedecer.",0,"Desvaloriza a participação do adolescente e rompe o vínculo, sem investigar a dinâmica do conflito.","Maya deixa de falar em casa e na UBS."],
+["Encaminhar para saúde mental sem envolver Maya na decisão.",2,"O encaminhamento pode ser útil quando indicado, mas deve ser construído com o adolescente para ter adesão e sentido.","Maya não comparece e se sente rotulada."]],
+net:[["Maya e a pessoa de confiança que ela indicar (pai, tia)",1,"Ela escolhe os vínculos e define a rede."],["Mãe, padrasto e pai, em conversa mediada, se for seguro",1,"Escutar todos amplia a compreensão e fortalece vínculos."],["Equipe da UBS, com retorno e rodas de conversa",1,"Oferece continuidade e espaço de escuta."],["Escola e Saúde na Escola, com o conhecimento de Maya",1,"Pode ser espaço de apoio e projetos como fotografia."],["Coletivo de grafite ou fotografia e grupos juvenis",1,"Fortalece identidade, expressão e pertencimento."],["Expor o conflito a todos os familiares",0,"Aumenta o conflito e viola a privacidade."],["Acionar a assistência social sem avaliar o risco",0,"Não é automático, exige avaliação e protocolos."]],
+sum:["Escuta ativa sem tomar partido.","Famílias diversas: avaliar vínculos protetores.","Participação e autonomia na decisão.","Mediação e rede de apoio comunitária."],
+ri:["Participação","Convivência familiar e comunitária","Privacidade","Proteção integral"],
+rq:"Como você pode apoiar o diálogo entre adolescentes e responsáveis sem escolher um lado?",rf:[1,2,4]}
+];
+const R=[null,["Estatuto da Criança e do Adolescente — Lei nº 8.069/1990","Presidência da República","https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"],["Proteger e Cuidar da Saúde de Adolescentes na Atenção Básica, 2ª ed.","Ministério da Saúde, 2018","https://bvsms.saude.gov.br/bvs/publicacoes/proteger_cuidar_adolescentes_atencao_basica_2ed.pdf"],["Guia Alimentar para a População Brasileira, 2ª ed.","Ministério da Saúde, 2014","https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf"],["Programa Saúde na Escola (PSE)","Ministério da Saúde","https://www.gov.br/saude/pt-br/composicao/saps/pse"],["Portal de IST, HIV/Aids e hepatites virais","Ministério da Saúde","https://www.gov.br/aids/pt-br"]];
+const app=document.getElementById("app");
+let S={v:"home",sel:[],q:[],i:0,st:0,p1:null,p2:null,ns:[],ck:false,done:{}};
+const E=(s)=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function av(c,sz){const h=c.h,b=c.hc;let back="",front="";
+if(h==2)back=`<rect x="30" y="32" width="40" height="46" rx="16" fill="${b}"/>`;
+if(h==4)back=[[34,30],[44,22],[56,22],[66,30],[30,42],[70,42]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="11" fill="${b}"/>`).join("");
+if(h==5)back=`<circle cx="50" cy="26" r="9" fill="${b}"/>`;
+if(h==1)front=`<path d="M31 44c-2-16 8-26 20-26s19 10 18 26c-4-9-10-12-20-13-8 0-14 4-18 13z" fill="${b}"/>`;
+if(h==2)front=`<path d="M31 44c0-16 8-24 19-24s19 8 19 24c-5-6-10-12-19-12s-14 6-19 12z" fill="${b}"/>`;
+if(h==3)front=`<path d="M32 40c0-12 8-20 18-20s18 8 18 20c-6-5-12-6-18-6s-12 1-18 6z" fill="${b}"/>`;
+if(h==4)front=`<path d="M32 42c2-8 8-12 18-12s16 4 18 12c-6-4-12-5-18-5s-12 1-18 5z" fill="${b}"/>`;
+if(h==5)front=`<path d="M31 42c0-14 8-20 19-20s19 6 19 20c-6-5-12-8-19-8s-13 3-19 8z" fill="${b}"/>`;
+return `<svg viewBox="0 0 100 100" role="img" aria-label="${c.n}"><circle cx="50" cy="50" r="50" fill="${c.bg}"/><path d="M14 100c0-22 14-34 36-34s36 12 36 34z" fill="${c.sh}"/>${back}<circle cx="50" cy="46" r="18" fill="${c.sk}"/>${front}<circle cx="43" cy="47" r="2" fill="#2A1F2D"/><circle cx="57" cy="47" r="2" fill="#2A1F2D"/><path d="M44 54q6 5 12 0" stroke="#2A1F2D" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`}
+const NU={n:"Enfermeira",bg:"#4A1D5C",sk:"#B77C58",hc:"#2A1A14",h:5,sh:"#F1E7F5"};
+function go(v){S.v=v;scrollTo(0,0);R_()}
+function tog(i){const k=S.sel.indexOf(i);k<0?S.sel.push(i):S.sel.splice(k,1);R_()}
+function start(){S.q=S.sel.slice();S.i=0;begin()}
+function begin(){S.st=0;S.p1=S.p2=null;S.ns=[];S.ck=false;go("story")}
+function nx(){S.st++;scrollTo(0,0);R_()}
+function pk(k,i){S[k]=i;R_()}
+function tn(i){const k=S.ns.indexOf(i);if(S.ck)return;k<0?S.ns.push(i):S.ns.splice(k,1);R_()}
+function fin(){const c=P[S.q[S.i]],a=(S.p1==null?0:c.o1[S.p1][1]==1?1:0)+(S.p2==null?0:c.o2[S.p2][1]==1?1:0);const ns=c.net.filter((o,j)=>S.ns.includes(j)==!!o[1]).length;S.done[c.id]={a:a,n:ns,t:c.net.length};nx()}
+function next(){S.i++;S.i<S.q.length?begin():go("select")}
+function R_(){app.innerHTML=V[S.v]();app.focus&&0}
+const prog=()=>{const t=S.q.length,d=Object.keys(S.done).length;return`<small>Sessão: ${d} de ${P.length} histórias concluídas</small>`};
+const V={
+home(){return`<div style="text-align:center;padding-top:20px"><span class="tag">Jogo educativo para Enfermagem</span><h1>Por trás do cuidado</h1><p class="mut" style="font-size:1.15rem">Conhecer histórias. Fazer escolhas. Transformar o cuidado.</p>
+<div class="hero">${av(P[0],1)}${av(P[1],1)}${av(NU,1)}${av(P[2],1)}${av(P[3],1)}</div>
+<p style="font-size:1.2rem;max-width:640px;margin:auto"><b>Cada adolescente tem uma história. Você está preparado para escutar, compreender e transformar o cuidado?</b></p>
+<p style="max-width:640px;margin:14px auto" class="mut">Você será uma enfermeira da Atenção Primária à Saúde e tomará decisões diante de situações envolvendo adolescentes, família, comunidade e serviços de saúde.</p>
+<button class="btn" onclick="go('select')">Começar jornada</button><button class="btn s" onclick="go('how')">Como jogar</button><button class="btn s" onclick="go('refs')">Biblioteca de referências</button></div>`},
+how(){return`<h2>Como jogar</h2><div class="card"><ol><li><b>Escolha</b> uma ou várias histórias na tela de personagens. Abra cada cartão para conhecer melhor o adolescente.</li><li><b>Converse</b> com o adolescente e tome decisões. Todas são plausíveis, e o desafio é raciocinar.</li><li><b>Leia o feedback</b>. Veja por que uma conduta é recomendada e o que as outras poderiam causar. Você pode rever a decisão.</li><li><b>Monte a rede</b> de apoio ao final de cada história e leia a síntese de aprendizagem.</li></ol><p class="mut">Não há pontos para o adolescente: a pontuação, quando aparece, avalia somente as suas decisões. O progresso vale para esta sessão e não é salvo entre dispositivos. Os casos são fictícios e não substituem protocolos clínicos nem decisões individualizadas.</p></div><button class="btn" onclick="go('home')">Voltar</button><button class="btn s" onclick="go('select')">Escolher histórias</button>`},
+select(){const n=S.sel.length;return`<div class="top"><h2>Quem você vai conhecer hoje?</h2>${prog()}</div><p class="mut">Selecione uma ou mais histórias. Elas acontecem no mesmo território e na mesma UBS.</p><div class="grid">${P.map(c=>`<div><button class="ch ${S.sel.includes(c.id)?"on":""}" aria-pressed="${S.sel.includes(c.id)}" onclick="tog(${c.id})"><span class="tick">${S.sel.includes(c.id)?"✓":""}</span><div style="width:84px">${av(c)}</div><h3 style="margin-top:10px">${c.n}, ${c.a} anos ${S.done[c.id]?"<span class='tag'>concluída</span>":""}</h3><span class="tag">${c.th}</span></button><details><summary>Conhecer ${c.n}</summary><p class="mut">${c.bio}</p></details></div>`).join("")}</div>
+<div class="card top"><b>${n} personagem${n==1?"":"s"} selecionado${n==1?"":"s"}</b><span><button class="btn s" onclick="go('home')">Início</button><button class="btn" ${n?"":"disabled"} onclick="start()">Começar histórias selecionadas</button></span></div>`},
+story(){const c=P[S.q[S.i]],s=S.st,pr=Math.round(s/8*100);
+const head=`<div class="top"><span class="tag">${c.n} · história ${S.i+1} de ${S.q.length}</span><button class="btn s" onclick="if(confirm('Sair da história? O progresso desta história será perdido.'))go('select')">Sair</button></div><div class="bar"><i style="width:${pr}%"></i></div>`;
+const dia=l=>l.map(x=>`<div class="say">${av(x[0]=="Enfermeira"?NU:c)}<div><b>${x[0]}</b>${x[1]}</div></div>`).join("");
+const dec=(k,q,o)=>`<h2>${q}</h2>${o.map((x,j)=>`<button class="opt ${S[k]==j?"on":""}" aria-pressed="${S[k]==j}" onclick="pk('${k}',${j})">${x[0]}</button>`).join("")}<button class="btn" ${S[k]==null?"disabled":""} onclick="nx()">Confirmar decisão</button>`;
+const fb=(k,o)=>{const x=o[S[k]];return`<h2>Devolutiva</h2><div class="box ${x[1]==1?"good":"warn"}"><b>${x[1]==1?"Conduta recomendada":x[1]==2?"Conduta parcialmente adequada":"Conduta a repensar"}</b><p>${x[2]}</p></div><div class="card"><b>O que acontece:</b> ${x[3]}</div><details><summary>O que poderia ocorrer com as outras escolhas</summary>${o.map((y,j)=>j==S[k]?"":`<div class="box" style="background:var(--pl2)"><b>${y[0]}</b><p>${y[2]}</p></div>`).join("")}</details><button class="btn s" onclick="S.st--;R_()">Rever decisão</button><button class="btn" onclick="nx()">Continuar a história</button>`};
+let b="";
+if(s==0)b=`<div style="width:120px">${av(c)}</div><h2>${c.n}, ${c.a} anos</h2><p>${c.intro}</p><div class="card">Cenário: UBS do bairro, manhã de atendimento do adolescente.</div><button class="btn" onclick="nx()">Entrar na UBS</button>`;
+else if(s==1)b=`<h2>Cena na UBS</h2>${dia(c.sc)}<button class="btn" onclick="nx()">Tomar uma decisão</button>`;
+else if(s==2)b=dec("p1",c.q1,c.o1);
+else if(s==3)b=fb("p1",c.o1);
+else if(s==4)b=dec("p2",c.q2,c.o2);
+else if(s==5)b=fb("p2",c.o2);
+else if(s==6)b=`<h2>Quem pode fazer parte dessa rede?</h2><p class="mut">Selecione as ações pertinentes e clique em verificar. A rede se articula com o adolescente, sem expô-lo.</p>${c.net.map((o,j)=>{const on=S.ns.includes(j),ok=!!o[1];return`<button class="opt ${on?"on":""} ${S.ck?(ok?"good":"warn"):""}" aria-pressed="${on}" onclick="tn(${j})">${o[0]}${S.ck?`<br><small><b>${ok?"Pertinente":"Repensar"}</b> — ${o[2]}</small>`:""}</button>`}).join("")}${S.ck?`<button class="btn" onclick="fin()">Ver conclusão</button>`:`<button class="btn" ${S.ns.length?"":"disabled"} onclick="S.ck=true;R_()">Verificar rede</button>`}`;
+else{const d=S.done[c.id]||{a:0,n:0,t:1},cc=c;b=`<h2>Obrigada por cuidar com a ${c.n}</h2><div class="card good box"><p>Você escutou, decidiu e articulou uma rede. É assim que o cuidado se transforma.</p><small>Suas decisões alinhadas às diretrizes: ${d.a} de 2. Itens da rede avaliados adequadamente: ${d.n} de ${d.t}. Esta pontuação avalia só as suas decisões, nunca o adolescente.</small></div>
+<div class="grid"><div class="card"><h3>O que aprendemos</h3><ul>${c.sum.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="card"><h3>Direitos e princípios</h3><ul>${c.ri.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>
+<div class="card"><h3>Para refletir</h3><p>${c.rq}</p><small>Referências: ${c.rf.map(i=>`<a href="${R[i][2]}" target="_blank" rel="noopener">${R[i][0]}</a>`).join("; ")}</small></div>
+<button class="btn s" onclick="begin()">Reiniciar esta história</button><button class="btn" onclick="next()">${S.i+1<S.q.length?"Próxima história":"Voltar à seleção"}</button><button class="btn s" onclick="go('select')">Jogar outra história</button>`}
+return head+`<div class="card">${b}</div>`},
+refs(){return`<h2>Biblioteca de referências</h2><div class="card">${R.slice(1).map(r=>`<p><b>${r[0]}</b><br><small>${r[1]}</small><br><a href="${r[2]}" target="_blank" rel="noopener">${r[2]}</a></p>`).join("")}<p class="mut"><small>Os links não foram abertos nesta sessão. Confira cada um e a versão vigente antes de citar. O conteúdo é educativo e não substitui protocolos nem a avaliação clínica individualizada.</small></p></div><button class="btn" onclick="go('home')">Voltar</button>`}};
+R_();
+</script></body></html>
